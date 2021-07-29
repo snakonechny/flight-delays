@@ -3,7 +3,7 @@ Project brewing for a long time; revived again in Jul 2021
 
 ## Intro
 
-Predicting flight delays is a common task for beginner's machine learning projects. It's a straightforward real world example of how one can take [readily available data](https://www.transtats.bts.gov/DL_SelectFields.asp?Table_ID=236), run some rudimentary analyses on it, and produce a relatively good classifier for delay/no delay outcome.
+Predicting flight delays is a common task for beginner's machine learning projects. It's a straightforward real world example of how one can take [readily available data](https://www.transtats.bts.gov), run some rudimentary analyses on it, and produce a relatively good classifier for delay/no delay outcome.
 
 The issue with most of these projects is how they conceptualize a delay. The unit of analysis is generally correct - it's a particular flight that will experience a delay/no delay outcome, not a plane or an airline. However, the explanatory variables that can be used to make a prediction go beyond just attributes of a plane or a flight. In fact, there are endless factors that can cause both a particular departure to be delayed, many of which are *systemic* (those belonging to the system in which a particular flight is operated) and not to the _physical airplane_ that's doing the flying.
 
