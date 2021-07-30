@@ -1,9 +1,9 @@
-# flight-delays Project
+# Flight Delays Project
 Project brewing for a long time; revived again in Jul 2021
 
 ## Intro
 
-Predicting flight delays is a common task for beginner's machine learning projects. It's a straightforward real world example of how one can take [readily available data](https://www.transtats.bts.gov), run some rudimentary analyses on it, and produce a relatively good classifier for delay/no delay outcome.
+Predicting flight delays is a common task for beginner's machine learning projects. It's a straightforward real world example of how one can take [readily available data](https://www.transtats.bts.gov/DL_SelectFields.asp?gnoyr_VQ=FGK&QO_fu146_anzr=b0-gvzr), run some rudimentary analyses on it, and produce a relatively good classifier for delay/no delay outcome.
 
 The issue with most of these projects is how they conceptualize a delay. The unit of analysis is generally correct - it's a particular flight that will experience a delay/no delay outcome, not a plane or an airline. However, the explanatory variables that can be used to make a prediction go beyond just attributes of a plane or a flight. In fact, there are endless factors that can cause both a particular departure to be delayed, many of which are *systemic* (those belonging to the system in which a particular flight is operated) and not to the _physical airplane_ that's doing the flying.
 
@@ -19,4 +19,12 @@ In this pet project, I will model the universe of flights with respect to the sy
 
 ## Data used
 
-[BTS's delays data](https://www.transtats.bts.gov/DL_SelectFields.asp?Table_ID=236). Mercifully, there's years of clean flight-level data available for free. Sadly, a row in that dataset is a flight, which means we have to compute airport- and system-level stats ourselves.
+[BTS's delays data](https://www.transtats.bts.gov/DL_SelectFields.asp?gnoyr_VQ=FGK&QO_fu146_anzr=b0-gvzr). Mercifully, there's years of clean flight-level data available for free. Sadly, a row in that dataset is a flight, which means we have to compute airport- and system-level stats ourselves.
+
+## Plan of action
+
+(0) do some exploratory work on tiny slice of this dataset
+
+(1) write a heuristic for predicting a delayed flight. Doesn't have to be a probabilistic one - just come up with a rule of thumb for saying that a flight will be delayed or not; test it out on a bigger slice of data
+
+(2) expand (1) to a probabilistic model with a handful of features

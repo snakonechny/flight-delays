@@ -1,0 +1,58 @@
+{
+    "Year": {
+        "name": "year",
+        "py_dtype": "int64",
+        "scala_dtype": "IntegerType"
+    },
+    "Quarter": {
+        "name": "quarter",
+        "py_dtype": "int64",
+        "scala_dtype": "IntegerType"
+    },
+    "Month": {
+        "name": "month",
+        "py_dtype": "int64",
+        "scala_dtype": "IntegerType"
+    },
+    "DayofMonth": {
+        "name": "day_of_month",
+        "py_dtype": "int64",
+        "scala_dtype": "IntegerType"
+    },
+    "DayOfWeek": {
+        "name": "day_of_week",
+        "py_dtype": "int64",
+        "scala_dtype": "IntegerType"
+    },
+    "FlightDate": {
+        "name": "flight_date",
+        "py_dtype": "date",
+        "scala_dtype": "DateType"
+    },
+    "Operating_Airline ": {
+        "name": "airline",
+        "py_dtype": "str",
+        "scala_dtype": "StringType"
+    },
+    "Tail_Number": {
+        "name": "tail",
+        "py_dtype": "str",
+        "scala_dtype": "StringType"
+    },
+    "Flight_Number_Operating_Airline": {
+        "name": "flight_number",
+        "py_dtype": "str",
+        "scala_dtype": "StringType"
+    },
+    "OriginCityMarketID": {
+        "name": "origin_market_id",
+        "py_dtype": "int64",
+        "scala_dtype": "IntegerType"
+    },
+    "Origin": {
+        "name": "origin",
+        "py_dtype": "str",
+        "scala_dtype": "StringType"
+    }
+
+}
