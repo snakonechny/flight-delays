@@ -99,37 +99,37 @@ cols_map = {
     },
     "CRSDepTime": {
         "name": "crs_dep_time",
-        "py_dtype": np.int64,
+        "py_dtype": np.float64,
         "nullable": True
     },
     "DepTime": {
         "name": "dep_time",
-        "py_dtype": np.int64,
+        "py_dtype": np.float64,
         "nullable": False
     },
     "DepDelay": {
         "name": "dep_delay",
-        "py_dtype": np.int64,
+        "py_dtype": np.float64,
         "nullable": True
     },
     "DepDelayMinutes": {
         "name": "dep_delay_minutes",
-        "py_dtype": np.int64,
+        "py_dtype": np.float64,
         "nullable": True
     },
     "DepDel15": {
         "name": "dep_delay_15",
-        "py_dtype": np.int64,
+        "py_dtype": np.float64,
         "nullable": True
     },
     "DepartureDelayGroups": {
         "name": "dep_delay_groups",
-        "py_dtype": np.int64,
+        "py_dtype": np.float64,
         "nullable": True
     },
     "DepTimeBlk": {
         "name": "dep_time_block",
-        "py_dtype": np.int64,
+        "py_dtype": np.str,
         "nullable": True
     },
     "TaxiOut": {
@@ -184,7 +184,7 @@ cols_map = {
     },
     "ArrTimeBlk": {
         "name": "arr_time_block",
-        "py_dtype": np.int64,
+        "py_dtype": np.str,
         "nullable": True
     },
     "Cancelled": {
@@ -207,29 +207,54 @@ cols_map = {
         "py_dtype": np.int64,
         "nullable": True
     },
+    "CRSElapsedTime": {
+        "name": "crs_elapsed_time",
+        "py_dtype": np.float64,
+        "nullable": True
+    },
+    "ActualElapsedTime": {
+        "name": "actual_elapsed_time",
+        "py_dtype": np.float64,
+        "nullable": True
+    },
+    "AirTime": {
+        "name": "air_time",
+        "py_dtype": np.float64,
+        "nullable": True
+    },
+    "Flights": {
+        "name": "flights",
+        "py_dtype": np.int64,
+        "nullable": True
+    },
+    "Distance": {
+        "name": "distance",
+        "py_dtype": np.int64,
+        "nullable": True
+    },
     "CarrierDelay": {
         "name": "carrier_delay",
-        "py_dtype": np.int64,
+        "py_dtype": np.float64,
         "nullable": True
     },
     "WeatherDelay": {
         "name": "weather_delay",
-        "py_dtype": np.int64,
+        "py_dtype": np.float64,
         "nullable": True
     },
     "NASDelay": {
         "name": "nas_delay",
-        "py_dtype": np.int64,
+        "py_dtype": np.float64,
         "nullable": True
     },
     "SecurityDelay": {
         "name": "security_delay",
-        "py_dtype": np.int64,
+        "py_dtype": np.float64,
         "nullable": True
     },
     "LateAircraftDelay": {
         "name": "late_aircraft_delay",
-        "py_dtype": np.int64,
+        "py_dtype": np.float64,
         "nullable": True
     },
     "FirstDepTime": {
@@ -239,32 +264,32 @@ cols_map = {
     },
     "TotalAddGTime": {
         "name": "total_add_gate_time",
-        "py_dtype": np.int64,
+        "py_dtype": np.float64,
         "nullable": True
     },
     "LongestAddGTime": {
         "name": "longest_add_gate_time",
-        "py_dtype": np.int64,
+        "py_dtype": np.float64,
         "nullable": True
     },
     "DivAirportLandings": {
         "name": "diverted_airport_landings",
-        "py_dtype": np.int64,
+        "py_dtype": np.float64,
         "nullable": True
     },
     "DivReachedDest": {
         "name": "diverted_reached_dest",
-        "py_dtype": np.int64,
+        "py_dtype": np.float64,
         "nullable": True
     },
     "DivActualElapsedTime": {
         "name": "diverted_actual_elapsed_time",
-        "py_dtype": np.int64,
+        "py_dtype": np.float64,
         "nullable": True
     },
     "DivDistance": {
         "name": "diverted_distance",
-        "py_dtype": np.int64,
+        "py_dtype": np.float64,
         "nullable": True
     },
     "Div1Airport": {
@@ -274,27 +299,27 @@ cols_map = {
     },
     "Div1WheelsOn": {
         "name": "diverted_wheels_on_1",
-        "py_dtype": np.int64,
+        "py_dtype": np.float64,
         "nullable": True
     },
     "Div1TotalGTime": {
         "name": "diverted_ground_time_1",
-        "py_dtype": np.int64,
+        "py_dtype": np.float64,
         "nullable": True
     },
     "Div1LongestGTime": {
         "name": "diverted_longest_gate_time_1",
-        "py_dtype": np.int64,
+        "py_dtype": np.float64,
         "nullable": True
     },
     "Div1WheelsOff": {
         "name": "diverted_wheels_off_1",
-        "py_dtype": np.int64,
+        "py_dtype": np.float64,
         "nullable": True
     },
     "Div1WheelsOff": {
         "name": "diverted_tail_1",
-        "py_dtype": np.int64,
+        "py_dtype": np.str,
         "nullable": True
     },
     "Div2Airport": {
@@ -304,27 +329,27 @@ cols_map = {
     },
     "Div2WheelsOn": {
         "name": "diverted_wheels_on_2",
-        "py_dtype": np.int64,
+        "py_dtype": np.float64,
         "nullable": True
     },
     "Div2TotalGTime": {
         "name": "diverted_ground_time_2",
-        "py_dtype": np.int64,
+        "py_dtype": np.float64,
         "nullable": True
     },
     "Div2LongestGTime": {
         "name": "diverted_longest_gate_time_2",
-        "py_dtype": np.int64,
+        "py_dtype": np.float64,
         "nullable": True
     },
     "Div2WheelsOff": {
         "name": "diverted_wheels_off_2",
-        "py_dtype": np.int64,
+        "py_dtype": np.float64,
         "nullable": True
     },
     "Div2WheelsOff": {
         "name": "diverted_tail_2",
-        "py_dtype": np.int64,
+        "py_dtype": np.str,
         "nullable": True
     },
     "Div3Airport": {
@@ -334,27 +359,27 @@ cols_map = {
     },
     "Div3WheelsOn": {
         "name": "diverted_wheels_on_3",
-        "py_dtype": np.int64,
+        "py_dtype": np.float64,
         "nullable": True
     },
     "Div3TotalGTime": {
         "name": "diverted_ground_time_3",
-        "py_dtype": np.int64,
+        "py_dtype": np.float64,
         "nullable": True
     },
     "Div3LongestGTime": {
         "name": "diverted_longest_gate_time_3",
-        "py_dtype": np.int64,
+        "py_dtype": np.float64,
         "nullable": True
     },
     "Div3WheelsOff": {
         "name": "diverted_wheels_off_3",
-        "py_dtype": np.int64,
+        "py_dtype": np.float64,
         "nullable": True
     },
     "Div3WheelsOff": {
         "name": "diverted_tail_3",
-        "py_dtype": np.int64,
+        "py_dtype": np.float64,
         "nullable": True
     }
 }
