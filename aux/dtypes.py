@@ -154,12 +154,12 @@ cols_map = {
     },
     "CRSArrTime": {
         "name": "crs_arr_time",
-        "py_dtype": np.int64,
+        "py_dtype": np.float64,
         "nullable": True
     },
     "ArrTime": {
         "name": "arr_time",
-        "py_dtype": np.int64,
+        "py_dtype": np.float64,
         "nullable": False
     },
     "ArrDelay": {
@@ -234,7 +234,7 @@ cols_map = {
     },
     "FirstDepTime": {
         "name": "first_dep_time",
-        "py_dtype": np.int64,
+        "py_dtype": np.float64,
         "nullable": True
     },
     "TotalAddGTime": {

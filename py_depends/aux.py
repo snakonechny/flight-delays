@@ -14,6 +14,6 @@ def subsetRenameRetype(df: pd.core.frame.DataFrame, cols_map: dict) -> pd.core.f
     rename_dict = {k: v['name'] for k, v in cols_map.items()}
     subs_df.rename(columns=rename_dict, inplace=True)
     # and finally override the original data types inferred by pandas
-    dtype_dict = {v['name']: v['py_dtype'] for k, v in cols_map.items() if v['py_dtype'] and v['nullable'] is False}
+    dtype_dict = {v['name']: v['py_dtype'] for k, v in cols_map.items() if v['py_dtype']}
     subs_df = subs_df.astype(dtype_dict)
     return subs_df
