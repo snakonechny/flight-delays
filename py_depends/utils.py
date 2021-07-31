@@ -25,7 +25,7 @@ def shapeDatetime(df: pd.core.frame.DataFrame, timestamp_cols: list, date_col: s
 
     for time_col in timestamp_cols:
         print('Shaping {}-{} columns'.format(time_col, date_col))
-        # there's almost definitely a way to do this simpler, but
+        # there's almost definitely a way to do this simpler, but...
         df[time_col] = (pd.to_timedelta(df[time_col] // 100, unit='hours') + pd.to_timedelta(df[time_col] % 100, unit='minutes')).apply(str)
         df[time_col] = df[time_col].str[-8:]
         df[time_col] = df.apply(lambda r: str(r[date_col]) + ' ' + str(r[time_col]) if all([r[date_col] != np.nan, r[time_col] != np.nan]) else np.nan, axis=1)
