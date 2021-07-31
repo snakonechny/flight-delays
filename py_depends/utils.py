@@ -1,5 +1,6 @@
 import zipfile
 import pandas as pd
+import numpy as np
 
 def unzipFile(path_to_file: str) -> pd.core.frame.DataFrame:
     """ Frees monthly extract file from the zip file """
@@ -17,3 +18,16 @@ def subsetRenameRetype(df: pd.core.frame.DataFrame, cols_map: dict) -> pd.core.f
     dtype_dict = {v['name']: v['py_dtype'] for k, v in cols_map.items() if v['py_dtype']}
     subs_df = subs_df.astype(dtype_dict)
     return subs_df
+
+def shapeDatetime(df: pd.core.frame.DataFrame, timestamp_cols: list, date_col: str) -> pd.core.frame.DataFrame:
+    """ Converts the unusable floats in timestamp_cols to datetime objects """
+    df[date_col] = pd.to_datetime(df[date_col], format='%Y-%m-%d')
+
+    for time_col in timestamp_cols:
+        print('Shaping {}-{} columns'.format(time_col, date_col))
+        # there's almost definitely a way to do this simpler, but
+        df[time_col] = (pd.to_timedelta(df[time_col] // 100, unit='hours') + pd.to_timedelta(df[time_col] % 100, unit='minutes')).apply(str)
+        df[time_col] = df[time_col].str[-8:]
+        df[time_col] = df.apply(lambda r: str(r[date_col]) + ' ' + str(r[time_col]) if all([r[date_col] != np.nan, r[time_col] != np.nan]) else np.nan, axis=1)
+    
+    return df
