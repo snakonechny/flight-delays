@@ -6,7 +6,7 @@ def unzipFile(path_to_file: str) -> pd.core.frame.DataFrame:
     """ Frees monthly extract file from the zip file """
     zf = zipfile.ZipFile(path_to_file)
     target_df = [f for f in zf.namelist() if '.csv' in f][0] # grabbing only the first one, assumes one zip = one csv
-    return pd.read_csv(zf.open(target_df))
+    return pd.read_csv(zf.open(target_df), low_memory=False)
 
 def subsetRenameRetype(df: pd.core.frame.DataFrame, cols_map: dict) -> pd.core.frame.DataFrame:
     """ Grabs relevant cols specified by cols_map, renames them, and overrides the original data types """
