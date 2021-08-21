@@ -28,6 +28,7 @@ def shapeDatetime(df: pd.core.frame.DataFrame, timestamp_cols: list, date_col: s
         # there's almost definitely a way to do this simpler, but...
         df[time_col] = (pd.to_timedelta(df[time_col] // 100, unit='hours') + pd.to_timedelta(df[time_col] % 100, unit='minutes')).apply(str)
         df[time_col] = df[time_col].str[-8:]
-        df[time_col] = df.apply(lambda r: str(r[date_col]) + ' ' + str(r[time_col]) if all([r[date_col] != np.nan, r[time_col] != np.nan]) else np.nan, axis=1)
-    
+        df[time_col] = df[date_col].dt.strftime('%Y-%m-%d') + ' ' + df[time_col]
+        # and now back to properly typed date
+        df[time_col] = pd.to_datetime(df[time_col], format='%Y-%m-%d %H:%M:%S', errors='coerce')
     return df
